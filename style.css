@@ -1,0 +1,82 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   display: flex;
+   flex-direction: column; /* Stack content vertically */
+   align-items: center; /* Center horizontally */
+   justify-content: flex-start; /* Align content to the top */
+   height: 100vh;
+   margin: 0;
+   background-color: #d3d3d3; /* Light gray background */
+   position: relative; /* Ensure footer stays at the bottom */
+}
+
+h1 {
+   text-align: center; /* Center the text */
+   margin-top: 20px; /* Add some space from the top */
+   font-size: 36px; /* Adjust size as needed */
+}
+
+.container {
+   display: flex;
+   width: 90vw;
+   justify-content: center; /* Center the container */
+}
+
+.panel {
+   background-size: auto 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   height: 80vh;
+   border-radius: 50px;
+   color: #0718e5;
+   cursor: pointer;
+   flex: 0.1;
+   margin: 10px;
+   position: relative;
+   transition: flex 1s ease-in;
+}
+
+.panel h3 {
+   font-size: 24px;
+   position: absolute;
+   bottom: 20px;
+   left: 40px;
+   margin: 0;
+   opacity: 0;
+}
+
+.panel.active {
+   background-size: cover;
+   flex: 0.9;
+}
+
+.panel.active h3 {
+   opacity: 1;
+   transition: opacity 0.3s ease-in 0.4s;
+}
+
+/* Footer Style */
+footer {
+   background-color: #00f; /* Neon blue background */
+   height: 20px; /* Narrow height */
+   width: 100%; /* Full width */
+   position: absolute; /* Positioned at the bottom */
+   bottom: 0;
+   left: 0;
+   box-shadow: 0 0 10px rgba(0, 0, 255, 0.8); /* Glowing effect */
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+   .container {
+      width: 100vw;
+   }
+
+   .panel:nth-of-type(4),
+   .panel:nth-of-type(5) {
+      display: none;
+   }
+}
